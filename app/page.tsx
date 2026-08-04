@@ -49,7 +49,7 @@ export default function Home() {
     setBlur(p.blur);
     setOpacity(p.opacity);
     setBorderOpacity(p.borderOpacity);
-    setBorderRadius(p.borderRadius);
+    setBorderRadius(p.radius);
   };
 
   const resetAll = () => {
