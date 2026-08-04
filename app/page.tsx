@@ -25,7 +25,7 @@ type ToolDef = {
   icon: string;
   category: string;
   desc: string;
-  component: React.ComponentType;
+  component: React.ComponentType<{ onCodeChange: (code: string) => void }>;
 };
 
 const tools: ToolDef[] = [
