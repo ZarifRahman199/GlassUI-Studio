@@ -49,11 +49,11 @@ export default function Home() {
     setBlur(p.blur);
     setOpacity(p.opacity);
     setBorderOpacity(p.borderOpacity);
-    setRadius(p.radius);
+    setBorderRadius(p.borderRadius);
   };
 
   const resetAll = () => {
-    setBlur(16); setOpacity(20); setBorderOpacity(30); setRadius(16);
+    setBlur(16); setOpacity(20); setBorderOpacity(30); setBorderRadius(16);
   };
 
   const currentBg = BG_PRESETS[bgIndex];
