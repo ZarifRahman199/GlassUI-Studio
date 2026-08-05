@@ -99,7 +99,7 @@ export default function Home() {
   }, [code]);
 
   return (
-    <div className="flex h-screen w-screen bg-[#09090b] overflow-hidden">
+    <div className="flex h-dvh w-screen bg-[#09090b] overflow-hidden">
       {/* Sidebar */}
       <motion.aside
         initial={false}
