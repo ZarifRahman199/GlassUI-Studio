@@ -9,7 +9,7 @@ import {
   Copy, Check, Search, Box, MousePointer, FileText, Code, Link, Eye,
   Columns3, Maximize, ArrowLeftRight, Minimize2, AlignLeft, ArrowDown,
   Palette as Rainbow, Sun, Moon, Image, Grid2X2, Zap, ArrowRight,
-  Play, Menu, ChevronRight, Shield, Code2, Wand2, Crown, Rocket, Heart,
+  Play, Menu, Shield, Code2, Wand2, Crown,
 } from 'lucide-react';
 import { GlassTool, GradientTool, ShadowTool, RadiusTool, FlexTool, GridTool, TextShadowTool, AnimationTool, BackdropTool, PaletteGenTool } from './tools/generators';
 import { TypeScaleTool, SpacingTool, FilterTool, ClipPathTool, TransformTool, GradBorderTool, NeumorphTool, VarTool, MediaTool, EasingTool } from './tools/effects';
@@ -76,90 +76,85 @@ const bgOptions = [
 ];
 
 /* ═══════════════════════════════════════════════════════════════════
-   LANDING PAGE — Clean SaaS Style (Vercel / Linear / Stripe)
+   LANDING — Dark, Bold, Premium (Vercel-style)
    ═══════════════════════════════════════════════════════════════════ */
 function LandingPage({ onLaunch, onSelectTool }: { onLaunch: () => void; onSelectTool: (id: string) => void }) {
   return (
-    <div className="min-h-screen bg-white text-zinc-900">
-      {/* ─── NAV ─── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-100">
+    <div className="min-h-screen bg-black text-white">
+      {/* Nav */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/[0.06]">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-zinc-900 flex items-center justify-center">
-              <Zap size={15} className="text-white" />
+            <div className="w-7 h-7 rounded-md bg-white flex items-center justify-center">
+              <Zap size={13} className="text-black" />
             </div>
-            <span className="text-[15px] font-semibold tracking-tight">GlassUI Studio</span>
+            <span className="text-sm font-semibold">GlassUI Studio</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
-            <a href="#tools" className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">Tools</a>
-            <a href="#how" className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">How it works</a>
-            <a href="#pricing" className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">Pricing</a>
+            <a href="#tools" className="text-sm text-zinc-400 hover:text-white transition-colors">Tools</a>
+            <a href="#pricing" className="text-sm text-zinc-400 hover:text-white transition-colors">Pricing</a>
           </div>
-          <button onClick={onLaunch}
-            className="px-4 py-2 rounded-lg bg-zinc-900 text-white text-sm font-medium hover:bg-zinc-800 transition-colors">
-            Open App
+          <button onClick={onLaunch} className="px-4 py-2 rounded-md bg-white text-black text-sm font-medium hover:bg-zinc-200 transition-colors">
+            Open App →
           </button>
         </div>
       </nav>
 
-      {/* ─── HERO ─── */}
-      <section className="pt-32 pb-20 px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-[48px] md:text-[64px] font-semibold leading-[1.08] tracking-tight text-zinc-900 mb-6">
-            The CSS toolkit for<br />
-            <span className="text-zinc-400">modern developers.</span>
+      {/* Hero */}
+      <section className="pt-28 pb-20 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight mb-6">
+            Your CSS toolkit.<br />
+            <span className="text-zinc-500">35 tools. One tab.</span>
           </h1>
-          <p className="text-lg text-zinc-500 max-w-xl mx-auto mb-10 leading-relaxed">
-            35+ tools to generate, preview, and copy production-ready CSS.
-            Glassmorphism, gradients, shadows, animations, and more.
+          <p className="text-xl text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Generate glassmorphism, gradients, shadows, animations, and more.
+            Preview live. Copy production-ready CSS in one click.
           </p>
           <div className="flex items-center justify-center gap-3">
             <button onClick={onLaunch}
-              className="px-6 py-3 rounded-lg bg-zinc-900 text-white text-sm font-medium hover:bg-zinc-800 transition-colors flex items-center gap-2">
-              <Play size={14} fill="white" />
+              className="px-8 py-3.5 rounded-lg bg-white text-black text-base font-semibold hover:bg-zinc-200 transition-colors flex items-center gap-2">
+              <Play size={16} fill="black" />
               Start for free
-              <ArrowRight size={14} />
             </button>
             <button onClick={() => onSelectTool('glass')}
-              className="px-6 py-3 rounded-lg border border-zinc-200 text-zinc-700 text-sm font-medium hover:border-zinc-300 transition-colors">
+              className="px-8 py-3.5 rounded-lg border border-zinc-800 text-zinc-300 text-base font-medium hover:border-zinc-600 hover:text-white transition-colors">
               Try glassmorphism
             </button>
           </div>
         </div>
       </section>
 
-      {/* ─── APP PREVIEW ─── */}
+      {/* App Preview */}
       <section className="pb-24 px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="rounded-xl border border-zinc-200 bg-zinc-50 overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.08)]">
-            {/* Browser chrome */}
-            <div className="flex items-center gap-2 px-4 py-3 bg-zinc-100 border-b border-zinc-200">
+          <div className="rounded-lg border border-zinc-800 bg-zinc-950 overflow-hidden shadow-2xl shadow-white/[0.03]">
+            <div className="flex items-center gap-2 px-4 py-3 bg-zinc-900 border-b border-zinc-800">
               <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-zinc-300" />
-                <div className="w-3 h-3 rounded-full bg-zinc-300" />
-                <div className="w-3 h-3 rounded-full bg-zinc-300" />
+                <div className="w-3 h-3 rounded-full bg-zinc-700" />
+                <div className="w-3 h-3 rounded-full bg-zinc-700" />
+                <div className="w-3 h-3 rounded-full bg-zinc-700" />
               </div>
               <div className="flex-1 ml-2">
-                <div className="max-w-xs mx-auto bg-white rounded-md px-3 py-1 text-[11px] text-zinc-400 text-center border border-zinc-200">
+                <div className="max-w-xs mx-auto bg-zinc-800 rounded-md px-3 py-1 text-xs text-zinc-500 text-center">
                   glass-ui-studio.vercel.app
                 </div>
               </div>
             </div>
-            {/* App body */}
             <div className="flex" style={{ height: '380px' }}>
-              <div className="w-52 bg-zinc-100 border-r border-zinc-200 p-3 overflow-hidden">
-                <div className="flex items-center gap-2 mb-4 pb-3 border-b border-zinc-200">
-                  <div className="w-7 h-7 rounded-md bg-zinc-900" />
-                  <div className="w-16 h-2 bg-zinc-200 rounded" />
+              <div className="w-52 bg-zinc-900 border-r border-zinc-800 p-3">
+                <div className="flex items-center gap-2 mb-4 pb-3 border-b border-zinc-800">
+                  <div className="w-6 h-6 rounded bg-white" />
+                  <div className="w-14 h-2 bg-zinc-700 rounded" />
                 </div>
-                <div className="space-y-1">
-                  {['Effects', 'Layout', 'Typography', 'Design', 'Dev Utils', 'Animation', 'Code'].map((c, i) => (
+                <div className="space-y-0.5">
+                  {['Effects', 'Layout', 'Typography', 'Design', 'Dev Utils'].map((c, i) => (
                     <div key={c} className="px-2 py-1">
-                      <div className="text-[9px] text-zinc-400 font-medium mb-1">{c}</div>
+                      <div className="text-[9px] text-zinc-600 mb-0.5">{c}</div>
                       {[1,2].map(j => (
-                        <div key={j} className={`flex items-center gap-2 px-2 py-1 rounded-md mb-0.5 ${i === 0 && j === 1 ? 'bg-indigo-50' : ''}`}>
-                          <div className={`w-4 h-4 rounded ${i === 0 && j === 1 ? 'bg-indigo-500' : 'bg-zinc-200'}`} />
-                          <div className={`w-12 h-1.5 rounded ${i === 0 && j === 1 ? 'bg-indigo-900' : 'bg-zinc-200'}`} />
+                        <div key={j} className={`flex items-center gap-1.5 px-2 py-1 rounded mb-0.5 ${i===0&&j===1?'bg-indigo-500/10':''}`}>
+                          <div className={`w-3.5 h-3.5 rounded-sm ${i===0&&j===1?'bg-indigo-500':'bg-zinc-700'}`} />
+                          <div className={`w-10 h-1 rounded ${i===0&&j===1?'bg-indigo-400':'bg-zinc-700'}`} />
                         </div>
                       ))}
                     </div>
@@ -167,34 +162,34 @@ function LandingPage({ onLaunch, onSelectTool }: { onLaunch: () => void; onSelec
                 </div>
               </div>
               <div className="flex-1 flex flex-col">
-                <div className="h-10 flex items-center px-4 border-b border-zinc-200 bg-white">
-                  <span className="text-xs text-zinc-400">Glassmorphism</span>
+                <div className="h-9 flex items-center px-4 border-b border-zinc-800 bg-zinc-950">
+                  <span className="text-xs text-zinc-500">Glassmorphism</span>
                 </div>
                 <div className="flex-1 flex">
-                  <div className="flex-[3] bg-gradient-to-br from-indigo-500/20 via-purple-400/20 to-pink-400/20 flex items-center justify-center">
-                    <div className="w-44 h-32 rounded-xl border border-white/40 bg-white/20 backdrop-blur-md p-4 shadow-lg">
+                  <div className="flex-[3] bg-gradient-to-br from-indigo-500/15 via-purple-500/10 to-pink-500/10 flex items-center justify-center">
+                    <div className="w-44 h-32 rounded-xl border border-white/20 bg-white/10 backdrop-blur-md p-4">
                       <div className="flex items-center gap-2 mb-3">
                         <div className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600" />
                         <div>
-                          <div className="w-16 h-2 bg-white/40 rounded" />
-                          <div className="w-12 h-1.5 bg-white/20 rounded mt-1" />
+                          <div className="w-16 h-2 bg-white/30 rounded" />
+                          <div className="w-10 h-1.5 bg-white/15 rounded mt-1" />
                         </div>
                       </div>
                       <div className="space-y-1.5">
-                        <div className="w-full h-1.5 bg-white/20 rounded" />
-                        <div className="w-3/4 h-1.5 bg-white/15 rounded" />
+                        <div className="w-full h-1.5 bg-white/15 rounded" />
+                        <div className="w-3/4 h-1.5 bg-white/10 rounded" />
                       </div>
                     </div>
                   </div>
-                  <div className="w-56 bg-white border-l border-zinc-200 p-4">
+                  <div className="w-56 bg-zinc-950 border-l border-zinc-800 p-4">
                     <div className="space-y-4">
                       {['Blur', 'Opacity', 'Radius', 'Border', 'Saturate'].map(l => (
                         <div key={l}>
                           <div className="flex justify-between mb-1">
-                            <span className="text-[11px] text-zinc-500">{l}</span>
-                            <span className="text-[11px] font-mono text-zinc-400">20px</span>
+                            <span className="text-xs text-zinc-500">{l}</span>
+                            <span className="text-xs font-mono text-zinc-400">20px</span>
                           </div>
-                          <div className="w-full h-1 bg-zinc-100 rounded-full">
+                          <div className="w-full h-1 bg-zinc-800 rounded-full">
                             <div className="w-3/5 h-full bg-indigo-500 rounded-full" />
                           </div>
                         </div>
@@ -202,9 +197,9 @@ function LandingPage({ onLaunch, onSelectTool }: { onLaunch: () => void; onSelec
                     </div>
                   </div>
                 </div>
-                <div className="h-9 flex items-center justify-between px-4 border-t border-zinc-200 bg-zinc-50">
-                  <span className="text-[10px] text-zinc-400 font-medium">.glass {`{}`}</span>
-                  <div className="px-2.5 py-1 rounded bg-zinc-900 text-[10px] text-white font-medium">Copy</div>
+                <div className="h-9 flex items-center justify-between px-4 border-t border-zinc-800 bg-zinc-950">
+                  <span className="text-[11px] text-zinc-600 font-mono">.glass</span>
+                  <div className="px-2 py-1 rounded bg-white text-[11px] text-black font-semibold">Copy CSS</div>
                 </div>
               </div>
             </div>
@@ -212,102 +207,77 @@ function LandingPage({ onLaunch, onSelectTool }: { onLaunch: () => void; onSelec
         </div>
       </section>
 
-      {/* ─── LOGOS / TRUST BAR ─── */}
-      <section className="py-16 border-y border-zinc-100 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-sm text-zinc-400 mb-8">Used by developers at</p>
-          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-40">
-            {['Vercel', 'Stripe', 'Linear', 'Shopify', 'Figma', 'Notion'].map(name => (
-              <span key={name} className="text-xl font-semibold text-zinc-900 tracking-tight">{name}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── FEATURES ─── */}
-      <section id="tools" className="py-24 px-6">
+      {/* Features */}
+      <section id="tools" className="py-24 px-6 border-t border-zinc-900">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">Everything you need.</h2>
-            <p className="text-lg text-zinc-500 max-w-xl mx-auto">
-              35+ tools across 7 categories. No fluff, no bloat — just the CSS properties you use every day.
-            </p>
+            <p className="text-sm font-medium text-zinc-500 mb-4">Features</p>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Everything you need.</h2>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-zinc-200 rounded-xl overflow-hidden border border-zinc-200">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-zinc-800/50 rounded-lg overflow-hidden border border-zinc-800/50">
             {[
-              { icon: Layers, title: 'Glassmorphism & Effects', desc: 'Frosted glass, shadows, borders, filters, and more. 9 visual effect tools.', tid: 'glass' },
-              { icon: LayoutGrid, title: 'Layout Generators', desc: 'Flexbox, CSS Grid, transforms, clip paths, and responsive layout tools.', tid: 'flex' },
-              { icon: Type, title: 'Typography', desc: 'Type scales, text shadows, and gradient text for consistent typography systems.', tid: 'typescale' },
-              { icon: Pipette, title: 'Design System', desc: 'Palettes, contrast checker, spacing scales, CSS variables, and color conversion.', tid: 'palette' },
-              { icon: Sparkles, title: 'Animation', desc: '10 keyframe presets and a visual cubic-bezier easing curve editor.', tid: 'animation' },
-              { icon: Code2, title: 'Developer Utilities', desc: 'Unit converter, Lorem ipsum, media queries, scrollbar, cursor, and minifier.', tid: 'json' },
+              { icon: Layers, title: 'Effects', desc: 'Glassmorphism, shadows, gradients, borders, filters, neumorphism, backdrop blur, and more.', tid: 'glass' },
+              { icon: LayoutGrid, title: 'Layout', desc: 'Flexbox, CSS Grid, transforms, clip paths, box model, scroll snap, multi-column, aspect ratios.', tid: 'flex' },
+              { icon: Type, title: 'Typography', desc: 'Type scales, text shadows, and gradient text. Build consistent type systems that scale.', tid: 'typescale' },
+              { icon: Pipette, title: 'Design System', desc: 'Color palettes, contrast checker, spacing scales, CSS variables, and color conversion tools.', tid: 'palette' },
+              { icon: Sparkles, title: 'Animation', desc: '10 keyframe presets and a visual cubic-bezier easing curve editor with SVG visualization.', tid: 'animation' },
+              { icon: Code2, title: 'Developer Tools', desc: 'Unit converter, Lorem ipsum, media queries, scrollbar styling, cursor picker, and code utilities.', tid: 'json' },
             ].map((f) => (
               <button key={f.title} onClick={() => onSelectTool(f.tid)}
-                className="group p-8 bg-white hover:bg-zinc-50 transition-colors text-left">
-                <div className="w-10 h-10 rounded-lg bg-zinc-100 flex items-center justify-center mb-4 group-hover:bg-zinc-200 transition-colors">
-                  <f.icon size={18} className="text-zinc-600" />
-                </div>
-                <h3 className="text-lg font-medium mb-2 text-zinc-900">{f.title}</h3>
+                className="group p-8 bg-zinc-950 hover:bg-zinc-900/50 transition-colors text-left">
+                <f.icon size={20} className="text-zinc-500 mb-4" />
+                <h3 className="text-lg font-semibold text-white mb-2">{f.title}</h3>
                 <p className="text-sm text-zinc-500 leading-relaxed">{f.desc}</p>
-                <div className="mt-4 flex items-center gap-1.5 text-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="text-sm font-medium">Try it</span>
-                  <ArrowRight size={14} />
-                </div>
               </button>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ─── HOW IT WORKS ─── */}
-      <section id="how" className="py-24 px-6 bg-zinc-50 border-y border-zinc-100">
+      {/* How it works */}
+      <section className="py-24 px-6 border-t border-zinc-900">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">How it works.</h2>
-            <p className="text-lg text-zinc-500">Three steps. Ten seconds.</p>
+            <p className="text-sm font-medium text-zinc-500 mb-4">How it works</p>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Three steps. Ten seconds.</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
             {[
-              { num: '01', title: 'Pick a tool.', desc: 'Choose from 35 CSS generators organized by category. Effects, layout, typography, design system, animation, and developer utilities.' },
-              { num: '02', title: 'Adjust & preview.', desc: 'Use sliders, color pickers, and toggles to fine-tune every property. See changes live in the built-in preview panel.' },
-              { num: '03', title: 'Copy & ship.', desc: 'One click copies clean, production-ready CSS to your clipboard. Paste it into your project and deploy.' },
+              { num: '01', title: 'Pick a tool.', desc: 'Browse 35+ generators across 7 categories. Use the search bar or scroll through the sidebar to find what you need.' },
+              { num: '02', title: 'Adjust & preview.', desc: 'Use sliders, color pickers, and toggles to fine-tune every property. See changes rendered live as you adjust.' },
+              { num: '03', title: 'Copy & ship.', desc: 'One click copies production-ready CSS to your clipboard. Paste it into your project and deploy.' },
             ].map((step) => (
               <div key={step.num}>
-                <span className="text-5xl font-light text-zinc-200">{step.num}</span>
-                <h3 className="text-xl font-medium mt-4 mb-3">{step.title}</h3>
-                <p className="text-[15px] text-zinc-500 leading-relaxed">{step.desc}</p>
+                <span className="text-6xl font-bold text-zinc-800">{step.num}</span>
+                <h3 className="text-xl font-semibold mt-4 mb-3">{step.title}</h3>
+                <p className="text-base text-zinc-500 leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ─── ALL TOOLS ─── */}
-      <section className="py-24 px-6">
+      {/* All tools */}
+      <section className="py-24 px-6 border-t border-zinc-900">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">All 35 tools.</h2>
-            <p className="text-lg text-zinc-500">Click any tool to open it instantly. No signup required.</p>
+            <p className="text-sm font-medium text-zinc-500 mb-4">All tools</p>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">35+ CSS generators.</h2>
           </div>
-          <div className="space-y-10">
+          <div className="space-y-12">
             {categories.map(cat => {
               const catTools = tools.filter(t => t.category === cat);
               return (
                 <div key={cat}>
-                  <h3 className="text-sm font-medium text-zinc-400 uppercase tracking-wider mb-4">{cat} <span className="text-zinc-300 normal-case">· {catTools.length}</span></h3>
+                  <h3 className="text-sm font-semibold text-zinc-500 mb-4">{cat} <span className="text-zinc-700 font-normal">({catTools.length})</span></h3>
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
                     {catTools.map(tool => {
                       const Icon = iconMap[tool.icon];
                       return (
                         <button key={tool.id} onClick={() => onSelectTool(tool.id)}
-                          className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg border border-zinc-100 hover:border-zinc-300 hover:bg-zinc-50 transition-all text-left">
-                          <div className="w-7 h-7 rounded-md bg-zinc-100 flex items-center justify-center flex-shrink-0">
-                            {Icon && <Icon size={13} className="text-zinc-500" />}
-                          </div>
-                          <div className="min-w-0">
-                            <p className="text-sm font-medium text-zinc-700 truncate">{tool.name}</p>
-                          </div>
+                          className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg border border-zinc-800 hover:border-zinc-600 hover:bg-zinc-900 transition-all text-left">
+                          <Icon size={14} className="text-zinc-600" />
+                          <span className="text-sm font-medium text-zinc-400">{tool.name}</span>
                         </button>
                       );
                     })}
@@ -319,27 +289,28 @@ function LandingPage({ onLaunch, onSelectTool }: { onLaunch: () => void; onSelec
         </div>
       </section>
 
-      {/* ─── TESTIMONIALS ─── */}
-      <section className="py-24 px-6 bg-zinc-50 border-y border-zinc-100">
+      {/* Testimonials */}
+      <section className="py-24 px-6 border-t border-zinc-900">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">What developers say.</h2>
+            <p className="text-sm font-medium text-zinc-500 mb-4">What developers say</p>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Trusted by thousands.</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { text: 'Replaced 5 different CSS generators I was using. The glassmorphism tool alone saves me 30 minutes per component.', name: 'Alex Chen', role: 'Frontend Developer' },
-              { text: 'Clean, fast, no bloat. What I see in GlassUI is exactly what ships to production. My team uses it daily.', name: 'Sarah Miller', role: 'Lead Designer' },
-              { text: '35 tools, zero cost, instant output. The easing curve editor with SVG visualization is something no other free tool has.', name: 'Marcus Johnson', role: 'Full Stack Engineer' },
+              { text: 'Replaced 5 different CSS generators I was using. The glassmorphism tool alone saves me 30 minutes per component. Clean output, no bloat.', name: 'Alex Chen', role: 'Frontend Developer' },
+              { text: 'What I see in GlassUI is exactly what ships to production. The live preview is incredibly accurate. My whole team switched to it.', name: 'Sarah Miller', role: 'Lead Designer' },
+              { text: '35 tools, zero cost, instant output. The easing curve editor with SVG visualization is something no other free tool has. Absolutely essential.', name: 'Marcus Johnson', role: 'Full Stack Engineer' },
             ].map(r => (
-              <div key={r.name} className="p-6 rounded-xl bg-white border border-zinc-200">
-                <p className="text-[15px] text-zinc-600 leading-relaxed mb-6">&ldquo;{r.text}&rdquo;</p>
+              <div key={r.name} className="p-6 rounded-lg border border-zinc-800 bg-zinc-950">
+                <p className="text-base text-zinc-400 leading-relaxed mb-6">&ldquo;{r.text}&rdquo;</p>
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-zinc-900 flex items-center justify-center text-xs font-semibold text-white">
+                  <div className="w-9 h-9 rounded-full bg-zinc-800 flex items-center justify-center text-xs font-semibold text-white">
                     {r.name.split(' ').map(n => n[0]).join('')}
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-zinc-900">{r.name}</p>
-                    <p className="text-xs text-zinc-400">{r.role}</p>
+                    <p className="text-sm font-medium text-white">{r.name}</p>
+                    <p className="text-xs text-zinc-600">{r.role}</p>
                   </div>
                 </div>
               </div>
@@ -348,12 +319,12 @@ function LandingPage({ onLaunch, onSelectTool }: { onLaunch: () => void; onSelec
         </div>
       </section>
 
-      {/* ─── PRICING ─── */}
-      <section id="pricing" className="py-24 px-6">
+      {/* Pricing */}
+      <section id="pricing" className="py-24 px-6 border-t border-zinc-900">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">Simple pricing.</h2>
-            <p className="text-lg text-zinc-500">Free to use. Upgrade when you need more.</p>
+            <p className="text-sm font-medium text-zinc-500 mb-4">Pricing</p>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Simple. Transparent.</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
@@ -361,29 +332,23 @@ function LandingPage({ onLaunch, onSelectTool }: { onLaunch: () => void; onSelec
               { name: 'Pro', price: '$9', period: '/mo', features: ['Everything in Free', 'Save presets', 'Export to CodePen', 'Custom themes', 'Priority support'], cta: 'Upgrade', popular: true },
               { name: 'Team', price: '$29', period: '/mo', features: ['Everything in Pro', 'Unlimited seats', 'API access', 'Custom branding', 'SSO'], cta: 'Contact sales' },
             ].map(plan => (
-              <div key={plan.name} className={`p-6 rounded-xl border ${plan.popular ? 'border-zinc-900 bg-zinc-900 text-white relative' : 'border-zinc-200'}`}>
-                {plan.popular && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-white text-xs font-medium text-zinc-900 shadow-sm">
-                    Popular
-                  </span>
-                )}
-                <h3 className={`text-lg font-medium mb-1 ${plan.popular ? 'text-white' : ''}`}>{plan.name}</h3>
+              <div key={plan.name} className={`p-6 rounded-lg border ${plan.popular ? 'border-white bg-white text-black relative' : 'border-zinc-800 bg-zinc-950'}`}>
+                {plan.popular && <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-white text-xs font-semibold text-black">Popular</span>}
+                <h3 className={`text-lg font-semibold mb-1 ${plan.popular ? '' : 'text-white'}`}>{plan.name}</h3>
                 <div className="flex items-baseline gap-1 mb-6">
-                  <span className={`text-4xl font-semibold ${plan.popular ? 'text-white' : ''}`}>{plan.price}</span>
-                  <span className={`text-sm ${plan.popular ? 'text-zinc-400' : 'text-zinc-400'}`}>{plan.period}</span>
+                  <span className={`text-4xl font-bold ${plan.popular ? '' : 'text-white'}`}>{plan.price}</span>
+                  <span className={`text-sm ${plan.popular ? 'text-zinc-500' : 'text-zinc-600'}`}>{plan.period}</span>
                 </div>
                 <ul className="space-y-3 mb-6">
                   {plan.features.map(f => (
                     <li key={f} className="flex items-center gap-2 text-sm">
-                      <Check size={14} className={plan.popular ? 'text-zinc-400' : 'text-zinc-500'} />
-                      <span className={plan.popular ? 'text-zinc-300' : 'text-zinc-600'}>{f}</span>
+                      <Check size={14} className={plan.popular ? 'text-zinc-400' : 'text-zinc-600'} />
+                      <span className={plan.popular ? 'text-zinc-600' : 'text-zinc-500'}>{f}</span>
                     </li>
                   ))}
                 </ul>
                 <button onClick={onLaunch}
-                  className={`w-full py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                    plan.popular ? 'bg-white text-zinc-900 hover:bg-zinc-100' : 'bg-zinc-900 text-white hover:bg-zinc-800'
-                  }`}>
+                  className={`w-full py-2.5 rounded-lg text-sm font-semibold transition-colors ${plan.popular ? 'bg-black text-white hover:bg-zinc-800' : 'bg-white text-black hover:bg-zinc-200'}`}>
                   {plan.cta}
                 </button>
               </div>
@@ -392,35 +357,29 @@ function LandingPage({ onLaunch, onSelectTool }: { onLaunch: () => void; onSelec
         </div>
       </section>
 
-      {/* ─── CTA ─── */}
-      <section className="py-24 px-6 bg-zinc-900">
+      {/* CTA */}
+      <section className="py-24 px-6 border-t border-zinc-900">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-4">
-            Start building with GlassUI Studio.
-          </h2>
-          <p className="text-lg text-zinc-400 mb-8">
-            Free forever. No signup required. Open source.
-          </p>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Start building.</h2>
+          <p className="text-lg text-zinc-500 mb-8">Free forever. No signup required. Open in your browser.</p>
           <button onClick={onLaunch}
-            className="px-6 py-3 rounded-lg bg-white text-zinc-900 text-sm font-medium hover:bg-zinc-100 transition-colors inline-flex items-center gap-2">
-            <Play size={14} fill="currentColor" />
+            className="px-8 py-3.5 rounded-lg bg-white text-black text-base font-semibold hover:bg-zinc-200 transition-colors inline-flex items-center gap-2">
+            <Play size={16} fill="currentColor" />
             Open the app
           </button>
         </div>
       </section>
 
-      {/* ─── FOOTER ─── */}
-      <footer className="py-12 px-6 border-t border-zinc-100">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      {/* Footer */}
+      <footer className="py-10 px-6 border-t border-zinc-900">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2.5">
-            <div className="w-7 h-7 rounded-lg bg-zinc-900 flex items-center justify-center">
-              <Zap size={13} className="text-white" />
+            <div className="w-6 h-6 rounded bg-white flex items-center justify-center">
+              <Zap size={11} className="text-black" />
             </div>
-            <span className="text-sm font-medium">GlassUI Studio</span>
+            <span className="text-sm text-zinc-500">GlassUI Studio</span>
           </div>
-          <p className="text-sm text-zinc-400">
-            Built with Next.js & Tailwind CSS. All tools run in your browser. No data leaves your machine.
-          </p>
+          <p className="text-sm text-zinc-600">Built with Next.js. All tools run in your browser. No data leaves your machine.</p>
         </div>
       </footer>
     </div>
@@ -428,7 +387,7 @@ function LandingPage({ onLaunch, onSelectTool }: { onLaunch: () => void; onSelec
 }
 
 /* ═══════════════════════════════════════════════════════════════════
-   TOOL VIEW — Clean Editor
+   TOOL VIEW
    ═══════════════════════════════════════════════════════════════════ */
 function ToolView({ toolId, onBack }: { toolId: string; onBack: () => void }) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -450,55 +409,48 @@ function ToolView({ toolId, onBack }: { toolId: string; onBack: () => void }) {
   useEffect(() => { setCode(''); }, [toolId]);
 
   return (
-    <div className="flex h-screen w-screen bg-white overflow-hidden">
-      {/* Sidebar */}
+    <div className="flex h-screen w-screen bg-black overflow-hidden">
       <motion.aside
         initial={false}
-        animate={{ width: sidebarOpen ? 260 : 0 }}
+        animate={{ width: sidebarOpen ? 256 : 0 }}
         transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
-        className="flex-shrink-0 border-r border-zinc-200 bg-zinc-50 flex flex-col overflow-hidden"
+        className="flex-shrink-0 border-r border-zinc-800 bg-zinc-950 flex flex-col overflow-hidden"
       >
-        <div className="p-4 flex items-center gap-2.5 border-b border-zinc-200">
-          <button onClick={onBack} className="w-8 h-8 rounded-lg bg-zinc-900 flex items-center justify-center hover:bg-zinc-800 transition-colors">
-            <Zap size={14} className="text-white" />
+        <div className="p-4 flex items-center gap-2.5 border-b border-zinc-800">
+          <button onClick={onBack} className="w-7 h-7 rounded bg-white flex items-center justify-center hover:bg-zinc-200 transition-colors">
+            <Zap size={12} className="text-black" />
           </button>
           {sidebarOpen && (
             <div>
-              <h1 className="text-sm font-semibold text-zinc-900">GlassUI Studio</h1>
-              <p className="text-[11px] text-zinc-400">35+ CSS Tools</p>
+              <h1 className="text-sm font-semibold text-white">GlassUI Studio</h1>
+              <p className="text-[11px] text-zinc-600">35 tools</p>
             </div>
           )}
         </div>
-
         {sidebarOpen && (
           <div className="px-3 pt-3">
             <div className="relative">
-              <Search size={13} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-zinc-400" />
+              <Search size={13} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-zinc-600" />
               <input type="text" placeholder="Search..." value={search} onChange={e => setSearch(e.target.value)}
-                className="w-full bg-white border border-zinc-200 rounded-lg pl-8 pr-3 py-2 text-xs text-zinc-900 placeholder-zinc-400 outline-none focus:border-zinc-400 transition-colors" />
+                className="w-full bg-zinc-900 border border-zinc-800 rounded-md pl-8 pr-3 py-2 text-xs text-white placeholder-zinc-600 outline-none focus:border-zinc-600 transition-colors" />
             </div>
           </div>
         )}
-
         <div className="flex-1 overflow-y-auto px-2 pt-2 pb-4">
           {sidebarOpen && categories.map(cat => {
             const catTools = filteredTools.filter(t => t.category === cat);
             if (catTools.length === 0) return null;
             return (
               <div key={cat} className="mb-2">
-                <div className="px-3 py-1">
-                  <p className="text-[10px] font-semibold uppercase tracking-wider text-zinc-400">{cat}</p>
-                </div>
+                <p className="px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-zinc-600">{cat}</p>
                 {catTools.map(tool => {
                   const Icon = iconMap[tool.icon];
                   const isActive = toolId === tool.id;
                   return (
                     <button key={tool.id} onClick={() => setCode('')}
-                      className={`w-full flex items-center gap-2 px-3 py-1.5 rounded-md text-left mb-0.5 transition-colors ${
-                        isActive ? 'bg-indigo-50 text-indigo-700' : 'text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100'
-                      }`}>
-                      <Icon size={13} className={isActive ? 'text-indigo-500' : 'text-zinc-400'} />
-                      <span className={`text-xs font-medium truncate ${isActive ? 'text-indigo-700' : ''}`}>{tool.name}</span>
+                      className={`w-full flex items-center gap-2 px-3 py-1.5 rounded-md text-left mb-0.5 transition-colors ${isActive ? 'bg-indigo-500/10 text-indigo-400' : 'text-zinc-500 hover:text-white hover:bg-zinc-900'}`}>
+                      <Icon size={13} className={isActive ? 'text-indigo-500' : 'text-zinc-600'} />
+                      <span className={`text-xs font-medium truncate ${isActive ? 'text-indigo-400' : ''}`}>{tool.name}</span>
                     </button>
                   );
                 })}
@@ -508,20 +460,17 @@ function ToolView({ toolId, onBack }: { toolId: string; onBack: () => void }) {
         </div>
       </motion.aside>
 
-      {/* Main */}
-      <main className="flex-1 flex flex-col min-w-0 bg-white">
-        <header className="h-11 flex items-center justify-between px-4 border-b border-zinc-200 flex-shrink-0">
+      <main className="flex-1 flex flex-col min-w-0 bg-black">
+        <header className="h-10 flex items-center justify-between px-4 border-b border-zinc-800 flex-shrink-0">
           <div className="flex items-center gap-3">
-            <button onClick={() => setSidebarOpen(!sidebarOpen)} className="p-1.5 rounded-md hover:bg-zinc-100 text-zinc-400 hover:text-zinc-700 transition-colors">
-              <Menu size={15} />
-            </button>
-            <span className="text-sm font-medium text-zinc-900">{activeTool.name}</span>
-            <span className="text-xs text-zinc-400">{activeTool.desc}</span>
+            <button onClick={() => setSidebarOpen(!sidebarOpen)} className="text-zinc-600 hover:text-white transition-colors"><Menu size={14} /></button>
+            <span className="text-sm font-medium text-white">{activeTool.name}</span>
+            <span className="text-xs text-zinc-600">{activeTool.desc}</span>
           </div>
           <div className="flex items-center gap-1">
             {bgOptions.map(bg => (
-              <button key={bg.id} onClick={() => setPreviewBg(bg.id)} title={bg.label}
-                className={`p-1.5 rounded-md transition-colors ${previewBg === bg.id ? 'bg-zinc-100 text-zinc-700' : 'text-zinc-300 hover:text-zinc-500'}`}>
+              <button key={bg.id} onClick={() => setPreviewBg(bg.id)}
+                className={`p-1.5 rounded transition-colors ${previewBg === bg.id ? 'text-white' : 'text-zinc-700 hover:text-zinc-400'}`}>
                 <bg.icon size={14} />
               </button>
             ))}
@@ -537,23 +486,16 @@ function ToolView({ toolId, onBack }: { toolId: string; onBack: () => void }) {
               </motion.div>
             </AnimatePresence>
           </div>
-
-          {/* Code Output */}
-          <div className="border-t border-zinc-200 flex-shrink-0">
-            <div className="flex items-center justify-between px-4 h-10 bg-zinc-50">
-              <div className="flex items-center gap-2">
-                <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">CSS Output</span>
-                <span className="text-[10px] font-mono text-zinc-400">{code.split('\n').length} lines</span>
-              </div>
+          <div className="border-t border-zinc-800 flex-shrink-0">
+            <div className="flex items-center justify-between px-4 h-9 bg-zinc-950">
+              <span className="text-xs text-zinc-600 font-medium">CSS Output · {code.split('\n').length} lines</span>
               <button onClick={handleCopy}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
-                  copied ? 'bg-green-50 text-green-600 border border-green-200' : 'bg-zinc-900 text-white hover:bg-zinc-800'
-                }`}>
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${copied ? 'bg-green-500/10 text-green-400' : 'bg-white text-black hover:bg-zinc-200'}`}>
                 {copied ? <Check size={12} /> : <Copy size={12} />}
                 {copied ? 'Copied!' : 'Copy CSS'}
               </button>
             </div>
-            <pre className="px-4 py-3 text-[12px] leading-relaxed text-zinc-600 overflow-auto max-h-32 bg-zinc-50 border-t border-zinc-100" style={{ fontFamily: "'JetBrains Mono', 'Fira Code', monospace" }}>
+            <pre className="px-4 py-3 text-xs leading-relaxed text-zinc-500 overflow-auto max-h-32 bg-zinc-950 border-t border-zinc-800/50" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
               <code>{code || '/* Adjust controls to generate CSS */'}</code>
             </pre>
           </div>
@@ -569,14 +511,8 @@ function ToolView({ toolId, onBack }: { toolId: string; onBack: () => void }) {
 export default function Home() {
   const [view, setView] = useState<'landing' | 'tool'>('landing');
   const [activeToolId, setActiveToolId] = useState('glass');
-
-  const launchApp = useCallback((toolId?: string) => {
-    if (toolId) setActiveToolId(toolId);
-    setView('tool');
-  }, []);
-
+  const launchApp = useCallback((toolId?: string) => { if (toolId) setActiveToolId(toolId); setView('tool'); }, []);
   const goHome = useCallback(() => { setView('landing'); }, []);
-
   if (view === 'tool') return <ToolView toolId={activeToolId} onBack={goHome} />;
   return <LandingPage onLaunch={() => launchApp()} onSelectTool={launchApp} />;
 }
