@@ -3,90 +3,74 @@
 @tailwind utilities;
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
+html { color-scheme: dark; }
 
 body {
-  background: #fff;
-  color: #18181b;
+  background: #000;
+  color: #fafafa;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* ─── Scrollbar ─── */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.08); border-radius: 10px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.15); }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
 
-/* ─── Range Input ─── */
 input[type="range"] {
   -webkit-appearance: none; appearance: none;
   height: 4px; border-radius: 4px;
-  background: #e4e4e7; outline: none; width: 100%;
+  background: rgba(255,255,255,0.1); outline: none; width: 100%;
 }
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none; appearance: none;
   width: 16px; height: 16px; border-radius: 50%;
-  background: #18181b; cursor: pointer;
-  border: 2px solid #fff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-  transition: box-shadow 0.15s;
+  background: #6366f1; cursor: pointer;
+  border: 2px solid #000;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.2);
+  transition: all 0.15s;
 }
 input[type="range"]::-webkit-slider-thumb:hover {
-  box-shadow: 0 1px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 0 0 5px rgba(99,102,241,0.15);
 }
 
-/* ─── Color Input ─── */
 input[type="color"] {
   -webkit-appearance: none; appearance: none;
   border: none; padding: 0; cursor: pointer;
 }
 input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
-input[type="color"]::-webkit-color-swatch { border: none; border-radius: 6px; }
+input[type="color"]::-webkit-color-swatch { border: none; border-radius: 8px; }
 
-/* ─── Select ─── */
 select {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2371717a' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 10px center;
-  -webkit-appearance: none;
-  appearance: none;
+  -webkit-appearance: none; appearance: none;
   padding-right: 28px !important;
 }
 
-/* ─── Preview Backgrounds ─── */
 .checkerboard {
   background-image:
-    linear-gradient(45deg, #f4f4f5 25%, transparent 25%),
-    linear-gradient(-45deg, #f4f4f5 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, #f4f4f5 75%),
-    linear-gradient(-45deg, transparent 75%, #f4f4f5 75%);
+    linear-gradient(45deg, #111 25%, transparent 25%),
+    linear-gradient(-45deg, #111 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #111 75%),
+    linear-gradient(-45deg, transparent 75%, #111 75%);
   background-size: 20px 20px;
   background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
-  background-color: #fafafa;
+  background-color: #0a0a0a;
 }
 
 .gradient-mesh {
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(168, 85, 247, 0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at 60% 80%, rgba(236, 72, 153, 0.06) 0%, transparent 50%),
-    #ffffff;
+    radial-gradient(ellipse at 20% 50%, rgba(99, 102, 241, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 80%, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
+    #000;
 }
 
-/* ─── Animations ─── */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-8px); }
 }
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
 .animate-float { animation: float 6s ease-in-out infinite; }
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradient-shift 8s ease infinite;
-}
