@@ -109,11 +109,11 @@ function Hero({ onLaunch, onSelectTool }: { onLaunch: () => void; onSelectTool: 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/[0.06] border border-white/[0.1] mb-10 backdrop-blur-sm"
+          className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-white/[0.06] border border-white/[0.1] mb-12 backdrop-blur-sm"
         >
-          <Sparkles size={16} className="text-indigo-400" />
-          <span className="text-base font-medium text-zinc-200">35+ Professional CSS Tools</span>
-          <span className="px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-bold">NEW</span>
+          <Sparkles size={20} className="text-indigo-400" />
+          <span className="text-xl font-medium text-zinc-200">35+ Professional CSS Tools</span>
+          <span className="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-sm font-bold">NEW</span>
         </motion.div>
 
         {/* Main headline */}
@@ -121,7 +121,7 @@ function Hero({ onLaunch, onSelectTool }: { onLaunch: () => void; onSelectTool: 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-6xl md:text-8xl lg:text-9xl font-black leading-[0.95] mb-8 tracking-tight"
+          className="text-7xl md:text-9xl lg:text-[10rem] font-black leading-[0.9] mb-10 tracking-tight"
         >
           <span className="text-white">Build </span>
           <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient">Stunning </span>
@@ -143,7 +143,7 @@ function Hero({ onLaunch, onSelectTool }: { onLaunch: () => void; onSelectTool: 
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-xl md:text-2xl lg:text-3xl text-zinc-400 max-w-3xl mx-auto mb-12 leading-relaxed font-light"
+          className="text-2xl md:text-3xl lg:text-4xl text-zinc-400 max-w-4xl mx-auto mb-16 leading-relaxed font-light"
         >
           The ultimate CSS toolkit for modern developers. Generate glassmorphism, gradients, shadows, animations, and more — preview live, copy production-ready code in seconds.
         </motion.p>
@@ -153,17 +153,17 @@ function Hero({ onLaunch, onSelectTool }: { onLaunch: () => void; onSelectTool: 
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-20"
+          className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-24"
         >
           <button onClick={onLaunch}
-            className="group flex items-center gap-3 px-10 py-5 rounded-2xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-bold text-lg shadow-2xl shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:shadow-purple-500/30 transition-all hover:scale-[1.05] active:scale-[0.97] animate-gradient">
-            <Play size={20} fill="white" />
+            className="group flex items-center gap-4 px-14 py-7 rounded-2xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-bold text-2xl shadow-2xl shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:shadow-purple-500/30 transition-all hover:scale-[1.05] active:scale-[0.97] animate-gradient">
+            <Play size={24} fill="white" />
             Start Building — It&apos;s Free
-            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
           </button>
           <button onClick={() => onSelectTool('glass')}
-            className="flex items-center gap-3 px-10 py-5 rounded-2xl bg-white/[0.05] border border-white/[0.15] text-zinc-200 font-semibold text-lg hover:bg-white/[0.1] hover:border-white/[0.2] transition-all backdrop-blur-sm">
-            <Wand2 size={20} />
+            className="flex items-center gap-3 px-14 py-7 rounded-2xl bg-white/[0.05] border border-white/[0.15] text-zinc-200 font-semibold text-2xl hover:bg-white/[0.1] hover:border-white/[0.2] transition-all backdrop-blur-sm">
+            <Wand2 size={24} />
             Try Glass Tool
           </button>
         </motion.div>
@@ -186,9 +186,9 @@ function Hero({ onLaunch, onSelectTool }: { onLaunch: () => void; onSelectTool: 
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 + i * 0.1 }}
             >
-              <div className="text-4xl md:text-5xl font-black bg-gradient-to-r from-white to-zinc-300 bg-clip-text text-transparent">{stat.value}</div>
-              <div className="text-base font-semibold text-zinc-300 mt-2">{stat.label}</div>
-              <div className="text-sm text-zinc-600 mt-0.5">{stat.sublabel}</div>
+              <div className="text-5xl md:text-7xl font-black bg-gradient-to-r from-white to-zinc-300 bg-clip-text text-transparent">{stat.value}</div>
+              <div className="text-xl font-semibold text-zinc-300 mt-3">{stat.label}</div>
+              <div className="text-base text-zinc-600 mt-1">{stat.sublabel}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -201,7 +201,7 @@ function Hero({ onLaunch, onSelectTool }: { onLaunch: () => void; onSelectTool: 
         transition={{ delay: 1.2 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-xs text-zinc-600 uppercase tracking-widest">Scroll to explore</span>
+        <span className="text-sm text-zinc-600 uppercase tracking-widest">Scroll to explore</span>
         <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 1.5, repeat: Infinity }} className="w-6 h-10 rounded-full border-2 border-zinc-700 flex justify-center pt-2">
           <div className="w-1.5 h-1.5 rounded-full bg-zinc-500" />
         </motion.div>
@@ -215,7 +215,7 @@ function Hero({ onLaunch, onSelectTool }: { onLaunch: () => void; onSelectTool: 
    ═══════════════════════════════════════════════════════════════════ */
 function PreviewMockup({ onSelectTool }: { onSelectTool: (id: string) => void }) {
   return (
-    <section className="py-20 px-6 relative overflow-hidden">
+    <section className="py-28 px-6 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/[0.03] to-transparent pointer-events-none" />
       <div className="max-w-5xl mx-auto">
         <motion.div
@@ -249,7 +249,7 @@ function PreviewMockup({ onSelectTool }: { onSelectTool: (id: string) => void })
               <div className="w-56 bg-[#08080e] border-r border-white/[0.06] p-4 overflow-hidden">
                 <div className="flex items-center gap-3 mb-5 pb-4 border-b border-white/[0.06]">
                   <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/20">
-                    <Zap size={14} className="text-white" />
+                    <Zap size={18} className="text-white" />
                   </div>
                   <div>
                     <div className="w-20 h-2.5 bg-white/10 rounded" />
@@ -365,7 +365,7 @@ function FeaturesSection({ onLaunch, onSelectTool }: { onLaunch: () => void; onS
   ];
 
   return (
-    <section className="py-32 px-6 relative">
+    <section className="py-40 px-6 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/[0.02] to-transparent pointer-events-none" />
       <div className="max-w-6xl mx-auto relative">
         <motion.div
@@ -375,14 +375,14 @@ function FeaturesSection({ onLaunch, onSelectTool }: { onLaunch: () => void; onS
           className="text-center mb-20"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-6">
-            <Layers2 size={14} className="text-indigo-400" />
-            <span className="text-sm font-medium text-indigo-300">Everything You Need</span>
+            <Layers2 size={18} className="text-indigo-400" />
+            <span className="text-lg font-medium text-indigo-300">Everything You Need</span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-black mb-8 tracking-tight">
             <span className="text-white">One Toolkit for </span>
             <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Every CSS Need</span>
           </h2>
-          <p className="text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-2xl text-zinc-400 max-w-3xl mx-auto leading-relaxed">
             From glassmorphism to keyframe animations — every CSS property you&apos;ll ever need, organized and ready to use.
           </p>
         </motion.div>
@@ -403,7 +403,7 @@ function FeaturesSection({ onLaunch, onSelectTool }: { onLaunch: () => void; onS
                 <feature.icon size={24} className="text-white" />
               </div>
               <h3 className="text-lg font-bold mb-2 text-zinc-200 group-hover:text-white transition-colors">{feature.title}</h3>
-              <p className="text-sm text-zinc-500 leading-relaxed group-hover:text-zinc-400 transition-colors">{feature.desc}</p>
+              <p className="text-base text-zinc-500 leading-relaxed group-hover:text-zinc-400 transition-colors">{feature.desc}</p>
               <div className="mt-4 flex items-center gap-2 text-indigo-400/0 group-hover:text-indigo-400 transition-all">
                 <span className="text-xs font-semibold">Try it</span>
                 <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
@@ -427,7 +427,7 @@ function HowItWorks({ onLaunch }: { onLaunch: () => void }) {
   ];
 
   return (
-    <section className="py-32 px-6 relative border-t border-white/[0.06]">
+    <section className="py-40 px-6 relative border-t border-white/[0.06]">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -435,15 +435,15 @@ function HowItWorks({ onLaunch }: { onLaunch: () => void }) {
           viewport={{ once: true, margin: '-100px' }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
-            <Rocket size={14} className="text-purple-400" />
-            <span className="text-sm font-medium text-purple-300">Simple Workflow</span>
+          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
+            <Rocket size={18} className="text-purple-400" />
+            <span className="text-lg font-medium text-purple-300">Simple Workflow</span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-black mb-8 tracking-tight">
             <span className="text-white">Three Steps. </span>
             <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Zero Hassle.</span>
           </h2>
-          <p className="text-xl text-zinc-400 max-w-2xl mx-auto">From tool selection to production code in under 10 seconds.</p>
+          <p className="text-2xl text-zinc-400 max-w-3xl mx-auto">From tool selection to production code in under 10 seconds.</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -457,12 +457,12 @@ function HowItWorks({ onLaunch }: { onLaunch: () => void }) {
               className="relative p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] transition-all group"
             >
               <span className="absolute top-6 right-8 text-7xl font-black text-white/[0.03] select-none">{step.num}</span>
-              <div className="w-16 h-16 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-indigo-500/40 transition-all duration-300">
+              <div className="w-20 h-20 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:border-indigo-500/40 transition-all duration-300">
                 <step.icon size={26} className="text-indigo-400" />
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-zinc-200">{step.title}</h3>
-              <p className="text-base text-zinc-400 leading-relaxed mb-3">{step.desc}</p>
-              <p className="text-sm text-zinc-600 leading-relaxed">{step.detail}</p>
+              <h3 className="text-3xl font-bold mb-4 text-zinc-200">{step.title}</h3>
+              <p className="text-lg text-zinc-400 leading-relaxed mb-4">{step.desc}</p>
+              <p className="text-base text-zinc-600 leading-relaxed">{step.detail}</p>
               {i < 2 && (
                 <div className="hidden md:block absolute -right-4 top-1/2 -translate-y-1/2 z-10">
                   <ArrowRight size={20} className="text-zinc-800" />
@@ -495,7 +495,7 @@ function AllToolsSection({ onSelectTool }: { onSelectTool: (id: string) => void 
   };
 
   return (
-    <section id="tools" className="py-32 px-6 border-t border-white/[0.06] relative">
+    <section id="tools" className="py-40 px-6 border-t border-white/[0.06] relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/[0.02] to-transparent pointer-events-none" />
       <div className="max-w-6xl mx-auto relative">
         <motion.div
@@ -504,15 +504,15 @@ function AllToolsSection({ onSelectTool }: { onSelectTool: (id: string) => void 
           viewport={{ once: true, margin: '-100px' }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6">
-            <Grid2X2 size={14} className="text-cyan-400" />
-            <span className="text-sm font-medium text-cyan-300">Browse Everything</span>
+          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6">
+            <Grid2X2 size={18} className="text-cyan-400" />
+            <span className="text-lg font-medium text-cyan-300">Browse Everything</span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-black mb-8 tracking-tight">
             <span className="text-white">All 35+ Tools, </span>
             <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">One Click Away</span>
           </h2>
-          <p className="text-xl text-zinc-400 max-w-2xl mx-auto">Click any tool to start building instantly. No signup, no paywall, no friction.</p>
+          <p className="text-2xl text-zinc-400 max-w-3xl mx-auto">Click any tool to start building instantly. No signup, no paywall, no friction.</p>
         </motion.div>
 
         <div className="space-y-10">
@@ -532,7 +532,7 @@ function AllToolsSection({ onSelectTool }: { onSelectTool: (id: string) => void 
                     <CatIcon size={18} className="text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-zinc-200">{cat}</h3>
+                    <h3 className="text-2xl font-bold text-zinc-200">{cat}</h3>
                     <p className="text-sm text-zinc-600">{catTools.length} tools available</p>
                   </div>
                 </div>
@@ -543,9 +543,9 @@ function AllToolsSection({ onSelectTool }: { onSelectTool: (id: string) => void 
                       <button
                         key={tool.id}
                         onClick={() => onSelectTool(tool.id)}
-                        className="group flex items-center gap-3 px-4 py-4 rounded-xl bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.06] hover:border-indigo-500/30 transition-all text-left hover:scale-[1.02] active:scale-[0.97]"
+                        className="group flex items-center gap-3 px-5 py-5 rounded-xl bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.06] hover:border-indigo-500/30 transition-all text-left hover:scale-[1.02] active:scale-[0.97]"
                       >
-                        <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center flex-shrink-0 group-hover:from-indigo-500/30 group-hover:to-purple-500/30 transition-all">
+                        <div className="w-11 h-11 rounded-lg bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center flex-shrink-0 group-hover:from-indigo-500/30 group-hover:to-purple-500/30 transition-all">
                           {Icon && <Icon size={15} className="text-indigo-400" />}
                         </div>
                         <div className="min-w-0">
@@ -579,7 +579,7 @@ function TestimonialsSection() {
   ];
 
   return (
-    <section className="py-32 px-6 border-t border-white/[0.06] relative">
+    <section className="py-40 px-6 border-t border-white/[0.06] relative">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -587,15 +587,15 @@ function TestimonialsSection() {
           viewport={{ once: true, margin: '-100px' }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 mb-6">
-            <Heart size={14} className="text-amber-400" />
-            <span className="text-sm font-medium text-amber-300">Loved by Thousands</span>
+          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-amber-500/10 border border-amber-500/20 mb-6">
+            <Heart size={18} className="text-amber-400" />
+            <span className="text-lg font-medium text-amber-300">Loved by Thousands</span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-black mb-8 tracking-tight">
             <span className="text-white">Developers Can&apos;t Stop </span>
             <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">Talking About It</span>
           </h2>
-          <p className="text-xl text-zinc-400 max-w-2xl mx-auto">Real reviews from real developers building real products.</p>
+          <p className="text-2xl text-zinc-400 max-w-3xl mx-auto">Real reviews from real developers building real products.</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -613,7 +613,7 @@ function TestimonialsSection() {
                   <Star key={j} size={16} className="text-amber-400 fill-amber-400" />
                 ))}
               </div>
-              <p className="text-base text-zinc-300 leading-relaxed mb-6">&quot;{review.text}&quot;</p>
+              <p className="text-lg text-zinc-300 leading-relaxed mb-8">&quot;{review.text}&quot;</p>
               <div className="flex items-center gap-3 pt-4 border-t border-white/[0.06]">
                 <div className="w-11 h-11 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-sm font-bold text-white shadow-lg">
                   {review.avatar}
@@ -642,7 +642,7 @@ function PricingSection({ onLaunch }: { onLaunch: () => void }) {
   ];
 
   return (
-    <section id="pricing" className="py-32 px-6 border-t border-white/[0.06] relative">
+    <section id="pricing" className="py-40 px-6 border-t border-white/[0.06] relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/[0.03] to-transparent pointer-events-none" />
       <div className="max-w-5xl mx-auto relative">
         <motion.div
@@ -651,15 +651,15 @@ function PricingSection({ onLaunch }: { onLaunch: () => void }) {
           viewport={{ once: true, margin: '-100px' }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 mb-6">
-            <Crown size={14} className="text-green-400" />
-            <span className="text-sm font-medium text-green-300">Simple Pricing</span>
+          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-green-500/10 border border-green-500/20 mb-6">
+            <Crown size={18} className="text-green-400" />
+            <span className="text-lg font-medium text-green-300">Simple Pricing</span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-black mb-8 tracking-tight">
             <span className="text-white">Start Free. </span>
             <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">Upgrade When Ready.</span>
           </h2>
-          <p className="text-xl text-zinc-400 max-w-2xl mx-auto">No hidden fees. No credit card required. Cancel anytime.</p>
+          <p className="text-2xl text-zinc-400 max-w-3xl mx-auto">No hidden fees. No credit card required. Cancel anytime.</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
@@ -684,12 +684,12 @@ function PricingSection({ onLaunch }: { onLaunch: () => void }) {
               <h3 className="text-2xl font-bold mb-1 text-zinc-200">{plan.name}</h3>
               <p className="text-sm text-zinc-500 mb-5">{plan.desc}</p>
               <div className="flex items-baseline gap-1 mb-8">
-                <span className="text-5xl font-black text-white">{plan.price}</span>
-                <span className="text-lg text-zinc-500">{plan.period}</span>
+                <span className="text-6xl font-black text-white">{plan.price}</span>
+                <span className="text-xl text-zinc-500">{plan.period}</span>
               </div>
               <ul className="space-y-4 mb-8">
                 {plan.features.map(f => (
-                  <li key={f} className="flex items-start gap-3 text-sm text-zinc-300">
+                  <li key={f} className="flex items-start gap-3 text-base text-zinc-300">
                     <div className="w-5 h-5 rounded-full bg-indigo-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check size={12} className="text-indigo-400" />
                     </div>
@@ -698,7 +698,7 @@ function PricingSection({ onLaunch }: { onLaunch: () => void }) {
                 ))}
               </ul>
               <button onClick={onLaunch}
-                className={`w-full py-4 rounded-xl font-bold text-base transition-all ${
+                className={`w-full py-5 rounded-xl font-bold text-lg transition-all ${
                   plan.popular
                     ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98]'
                     : 'bg-white/[0.05] border border-white/[0.1] text-zinc-300 hover:bg-white/[0.1] hover:scale-[1.02] active:scale-[0.98]'
@@ -719,7 +719,7 @@ function PricingSection({ onLaunch }: { onLaunch: () => void }) {
    ═══════════════════════════════════════════════════════════════════ */
 function FinalCTA({ onLaunch }: { onLaunch: () => void }) {
   return (
-    <section className="py-32 px-6 border-t border-white/[0.06] relative overflow-hidden">
+    <section className="py-40 px-6 border-t border-white/[0.06] relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/10 via-purple-500/10 to-transparent pointer-events-none" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-indigo-500/20 rounded-full blur-[120px] pointer-events-none" />
       <motion.div
@@ -728,17 +728,17 @@ function FinalCTA({ onLaunch }: { onLaunch: () => void }) {
         viewport={{ once: true }}
         className="relative max-w-3xl mx-auto text-center z-10"
       >
-        <h2 className="text-4xl md:text-6xl lg:text-7xl font-black mb-8 tracking-tight leading-tight">
+        <h2 className="text-5xl md:text-7xl lg:text-8xl font-black mb-10 tracking-tight leading-tight">
           <span className="text-white">Ready to Build</span>
           <br />
           <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient">Something Beautiful?</span>
         </h2>
-        <p className="text-xl md:text-2xl text-zinc-400 mb-12 max-w-xl mx-auto leading-relaxed">
+        <p className="text-2xl md:text-3xl text-zinc-400 mb-14 max-w-xl mx-auto leading-relaxed">
           Join thousands of developers who build faster, ship sooner, and create stunning UIs with GlassUI Studio.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
           <button onClick={onLaunch}
-            className="group flex items-center gap-3 px-12 py-5 rounded-2xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-bold text-lg shadow-2xl shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:shadow-purple-500/30 transition-all hover:scale-[1.05] active:scale-[0.97] animate-gradient">
+            className="group flex items-center gap-3 px-14 py-7 rounded-2xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-bold text-2xl shadow-2xl shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:shadow-purple-500/30 transition-all hover:scale-[1.05] active:scale-[0.97] animate-gradient">
             <Play size={20} fill="white" />
             Get Started for Free
             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -758,7 +758,7 @@ function LandingPage({ onLaunch, onSelectTool }: { onLaunch: () => void; onSelec
     <div className="min-h-screen bg-black text-white">
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/70 backdrop-blur-2xl border-b border-white/[0.06]">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/30">
               <Zap size={16} className="text-white" />
